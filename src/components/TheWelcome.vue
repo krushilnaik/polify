@@ -1,5 +1,5 @@
 <script setup lang="ts"></script>
 
 <template>
-  <h1>Hi</h1>
+  <h1 class="text-center text-2xl">Hi</h1>
 </template>
