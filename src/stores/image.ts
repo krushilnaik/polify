@@ -2,14 +2,18 @@ import { ref } from "vue";
 import { defineStore } from "pinia";
 
 export const useImageStore = defineStore("image", () => {
-  const image = ref(0);
-  // const doubleCount = computed(() => count.value * 2)
-  // function increment() {
-  //   count.value++
-  // }
-  function setImage(data) {
+  const image = ref<HTMLImageElement>();
+  const hasImage = ref(false);
+
+  function setImage(data: HTMLImageElement) {
     image.value = data;
+    hasImage.value = true;
   }
 
-  return { image, setImage };
+  function clearImage() {
+    image.value = undefined;
+    hasImage.value = false;
+  }
+
+  return { image, setImage, hasImage, clearImage };
 });

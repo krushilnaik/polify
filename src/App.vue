@@ -1,13 +1,29 @@
 <script setup lang="ts">
-  import { TheWelcome, Uploader } from "@/components";
+  import { Uploader, SVG } from "@/components";
+  import { useImageStore } from "@/stores";
+  import { ref } from "vue";
+
+  const canvas = ref<HTMLCanvasElement>();
+  const imageStore = useImageStore();
+
+  imageStore.$subscribe((_mutation, state) => {
+    if (canvas.value && state.image) {
+      canvas.value.width = state.image?.width;
+      canvas.value.height = state.image?.height;
+
+      const ctx = canvas.value.getContext("2d");
+      ctx?.drawImage(state.image, 0, 0);
+    }
+  });
 </script>
 
 <template>
-  <main class="flex flex-col gap-4">
-    <TheWelcome />
-    <Uploader />
-    <!-- <canvas
-      class="w-80 md:w-[450px] aspect-square bg-black/10 dark:bg-white/10 rounded-lg"
-    /> -->
+  <main class="flex gap-4">
+    <!-- <TheWelcome /> -->
+    <Uploader>
+      <canvas ref="canvas" class="absolute top-0 left-0 w-full h-full z-20" />
+    </Uploader>
+
+    <SVG />
   </main>
 </template>
