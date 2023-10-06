@@ -10,6 +10,11 @@
     if (canvas.value && state.image) {
       canvas.value.width = state.image?.width;
       canvas.value.height = state.image?.height;
+      // setTimeout(() => {
+      if (canvas.value) {
+        canvas.value.style.opacity = "100%";
+      }
+      // }, 400);
 
       const ctx = canvas.value.getContext("2d");
       ctx?.drawImage(state.image, 0, 0);
@@ -21,7 +26,10 @@
   <main class="flex gap-4">
     <!-- <TheWelcome /> -->
     <Uploader>
-      <canvas ref="canvas" class="absolute top-0 left-0 w-full h-full z-20" />
+      <canvas
+        ref="canvas"
+        class="absolute top-0 left-0 w-full h-full z-20 opacity-0 transition-opacity duration-500 delay-300"
+      />
     </Uploader>
 
     <SVG />
