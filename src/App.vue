@@ -10,11 +10,9 @@
     if (canvas.value && state.image) {
       canvas.value.width = state.image?.width;
       canvas.value.height = state.image?.height;
-      // setTimeout(() => {
       if (canvas.value) {
         canvas.value.style.opacity = "100%";
       }
-      // }, 400);
 
       const ctx = canvas.value.getContext("2d");
       ctx?.drawImage(state.image, 0, 0);
@@ -24,7 +22,6 @@
 
 <template>
   <main class="flex gap-4">
-    <!-- <TheWelcome /> -->
     <Uploader>
       <canvas
         ref="canvas"
