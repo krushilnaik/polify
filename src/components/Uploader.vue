@@ -44,6 +44,16 @@
 
     label.value?.classList.remove("hover");
   };
+
+  onMounted(() => {
+    if (input.value) {
+      input.value.onchange = function (e) {
+        let img = new Image();
+        img.onload = () => setImage(img);
+        img.src = URL.createObjectURL(this.files[0]);
+      };
+    }
+  });
 </script>
 
 <template>
