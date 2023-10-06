@@ -68,12 +68,17 @@
 
   onMounted(() => {
     if (input.value) {
-      input.value.onchange = function (e) {
+      input.value.onchange = function () {
         let img = new Image();
         img.onload = () => setImage(img);
-        img.src = URL.createObjectURL(this.files[0]);
-        filename.value = this.files[0].name;
-        uploadAnimation();
+
+        const { files } = this as HTMLInputElement;
+
+        if (files) {
+          img.src = URL.createObjectURL(files[0]);
+          filename.value = files[0].name;
+          uploadAnimation();
+        }
       };
     }
   });
