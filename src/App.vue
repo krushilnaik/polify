@@ -10,9 +10,7 @@
     if (canvas.value && state.image) {
       canvas.value.width = state.image?.width;
       canvas.value.height = state.image?.height;
-      if (canvas.value) {
-        canvas.value.style.opacity = "100%";
-      }
+      canvas.value.style.opacity = "100%";
 
       const ctx = canvas.value.getContext("2d");
       ctx?.drawImage(state.image, 0, 0);
