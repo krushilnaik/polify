@@ -2,7 +2,7 @@
 
 <template>
   <svg
-    class="bg-white/10 w-[450px] aspect-square rounded-lg"
+    class="bg-white/10 w-80 md:w-[450px] aspect-square rounded-lg"
     stroke="currentColor"
     stroke-width="0.5"
   ></svg>

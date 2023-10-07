@@ -19,14 +19,16 @@
 </script>
 
 <template>
-  <main class="flex gap-4 flex-wrap [&>*]:max-w-[90vw]">
-    <Uploader>
-      <canvas
-        ref="canvas"
-        class="absolute top-0 left-0 w-full h-full z-20 opacity-0 transition-opacity duration-500 delay-300"
-      />
-    </Uploader>
-
-    <SVG />
+  <main class="flex gap-4 flex-col flex-wrap">
+    <div class="flex flex-wrap gap-4 justify-center">
+      <Uploader>
+        <canvas
+          ref="canvas"
+          class="absolute top-0 left-0 w-full h-full z-20 opacity-0 transition-opacity duration-500 delay-300"
+        />
+      </Uploader>
+      <SVG />
+    </div>
+    <button>Build Pokedex</button>
   </main>
 </template>
