@@ -29,6 +29,10 @@
       </Uploader>
       <SVG />
     </div>
-    <button>Build Pokedex</button>
+    <button
+      class="bg-rose-500 self-center p-2 px-3 rounded-lg font-bold border-[3px] border-white hover:border-rose-500 hover:text-rose-500 hover:bg-white transition-colors duration-300"
+    >
+      Build Pokedex
+    </button>
   </main>
 </template>
