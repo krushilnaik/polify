@@ -19,7 +19,7 @@
 </script>
 
 <template>
-  <main class="flex gap-4">
+  <main class="flex gap-4 flex-wrap [&>*]:max-w-[90vw]">
     <Uploader>
       <canvas
         ref="canvas"
