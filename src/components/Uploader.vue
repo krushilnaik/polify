@@ -85,10 +85,10 @@
 </script>
 
 <template>
-  <div class="w-80 md:w-[450px] aspect-square rounded-lg">
+  <div class="w-80 md:w-[450px] aspect-square rounded-lg overflow-clip">
     <label
       for="fileUpload"
-      class="block relative w-full h-full text-center transition-colors duration-300 overflow-clip cursor-pointer"
+      class="block relative w-full h-full text-center transition-colors duration-300 cursor-pointer"
       id="inputLabel"
       ref="label"
       @dragover.prevent=""
